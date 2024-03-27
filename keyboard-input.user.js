@@ -2,9 +2,11 @@
 // @name         Keyboard input for Desmos
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  TamperMonkey userscript for listening to keyboard inputs in Desmos. 
+// @description  Very useful for graphs that need keyboard input
 // @author       Charlieee1
 // @match        https://www.desmos.com/calculator*
+// @match        https://www.desmos.com/geometry*
+// @match        https://www.desmos.com/3d*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=desmos.com
 // @grant        none
 // ==/UserScript==
