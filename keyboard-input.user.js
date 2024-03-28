@@ -2,7 +2,7 @@
 // @name         Keyboard input for Desmos
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Very useful for graphs that need keyboard input
+// @description  TamperMonkey userscript for listening to keyboard inputs in Desmos.
 // @author       Charlieee1
 // @match        https://www.desmos.com/calculator*
 // @match        https://www.desmos.com/geometry*
@@ -17,7 +17,7 @@
     // Your code here...
     console.log("Listening for keyboard inputs!");
 	window.addEventListener('keydown', function(e) {
-		const exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.includes('K_{' + e.key + '}');});
+		const exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.startsWith('K_{' + e.key + '}');});
 		if (exp) {
 			Calc.setExpression({
 				id: exp.id,
@@ -27,7 +27,7 @@
 	});
 
 	window.addEventListener('keyup', function(e) {
-		const exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.includes('K_{' + e.key + '}');});
+		const exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.startsWith('K_{' + e.key + '}');});
 		if (exp) {
 			Calc.setExpression({
 				id: exp.id,
