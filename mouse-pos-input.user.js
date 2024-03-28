@@ -5,6 +5,8 @@
 // @description  TamperMonkey userscript for detecting the position of mouse cursor on graph.
 // @author       Charlieee1
 // @match        https://www.desmos.com/calculator*
+// @match        https://www.desmos.com/geometry*
+// @match        https://www.desmos.com/3d*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=desmos.com
 // @grant        none
 // ==/UserScript==
