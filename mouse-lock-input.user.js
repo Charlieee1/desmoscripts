@@ -54,14 +54,14 @@
                     if (exp) {
                         Calc.setExpression({
                             id: exp.id,
-                            latex: 'M_{XDELTA}=' + (x + Number(exp.latex.split("=")[1]))
+                            latex: 'M_{XDELTA}=' + ((x + Number(exp.latex.split("=")[1]) - 1) % 2 - 1)
                         });
                     }
                     exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.startsWith('M_{YDELTA}');});
                     if (exp) {
                         Calc.setExpression({
                             id: exp.id,
-                            latex: 'M_{YDELTA}=' + (y + Number(exp.latex.split("=")[1]))
+                            latex: 'M_{YDELTA}=' + ((y + Number(exp.latex.split("=")[1]) - 1) % 2 - 1)
                         });
                     }
                     // console.log("Mouse position relative to grapher element: (" + x + ", " + y + ")");
