@@ -5,8 +5,6 @@
 // @description  TamperMonkey userscript for detecting the position of mouse cursor on graph.
 // @author       Charlieee1
 // @match        https://www.desmos.com/calculator*
-// @match        https://www.desmos.com/geometry*
-// @match        https://www.desmos.com/3d*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=desmos.com
 // @grant        none
 // ==/UserScript==
@@ -23,14 +21,14 @@
                 var rect = grapher.getBoundingClientRect();
                 var x = (event.clientX - rect.left) / rect.width * 2 - 1;
                 var y = -(event.clientY - rect.top) / rect.height * 2 + 1;
-                let exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.includes('M_{X}');});
+                let exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.startsWith('M_{X}');});
                 if (exp) {
                     Calc.setExpression({
                         id: exp.id,
                         latex: 'M_{X}=' + x
                     });
                 }
-                exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.includes('M_{Y}');});
+                exp = Calc.getExpressions().find(function(exp) {return exp.latex && exp.latex.startsWith('M_{Y}');});
                 if (exp) {
                     Calc.setExpression({
                         id: exp.id,
