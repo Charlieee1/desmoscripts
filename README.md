@@ -9,3 +9,7 @@ A compilation of desmos scripts.
 
 ## Explanatory graphs
 [javascript mod for mouselock](https://www.desmos.com/calculator/w6qktsxlvk)  
+
+## Fun graphs
+[Keyboard input for light](https://www.desmos.com/3d/7a53dd7de9)  
+[Rotating cube with arrow keys](https://www.desmos.com/3d/82ce72db91)  
