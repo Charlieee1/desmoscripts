@@ -13,7 +13,7 @@
     'use strict';
 
     // Your code here...
-	let ctx = new AudioContext(), buf;
+    let ctx = new AudioContext(), buf;
 
     fetch("https://gist.githubusercontent.com/ronwnor/8d6de91e461c6182ee11c2f7035a7659/raw/0f6d9a6413210ad3131fad5be4f7099d28b439fe/clicc.ogg")
         .then(res => res.arrayBuffer())
