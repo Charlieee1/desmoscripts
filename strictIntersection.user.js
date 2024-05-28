@@ -9,12 +9,10 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-  let oldConf = Calc.controller.getMathquillConfig;
+let oldConf = Calc.controller.getMathquillConfig;
 
-  Calc.controller.getMathquillConfig = (e) => {
-      let conf = oldConf.call(Calc.controller, e);
-      conf.autoOperatorNames += " strictintersection";
-      return conf;
-  }
-})();
+Calc.controller.getMathquillConfig = (e) => {
+    let conf = oldConf.call(Calc.controller, e);
+    conf.autoOperatorNames += " strictintersection";
+    return conf;
+}
