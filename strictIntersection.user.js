@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         strictIntersection
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      1.0
 // @description  no description provided
 // @author       Naitronbomb
 // @match        https://www.desmos.com/geometry*
