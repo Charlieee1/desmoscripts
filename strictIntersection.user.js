@@ -9,7 +9,9 @@
 // @grant        none
 // ==/UserScript==
 
-window.addEventListener('load', () => { 
+function enableStrictIntersection() {
+    if ((window as any).Calc == undefined) setTimeout(enableStrictIntersection, 10);
+    
     let oldConf = Calc.controller.getMathquillConfig;
     
     Calc.controller.getMathquillConfig = (e) => {
@@ -17,4 +19,6 @@ window.addEventListener('load', () => {
         conf.autoOperatorNames += " strictintersection";
         return conf;
     }
-});
+}
+
+enableStrictIntersection();
