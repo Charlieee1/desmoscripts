@@ -10,15 +10,15 @@
 // ==/UserScript==
 
 function enableStrictIntersection() {
-    if ((window as any).Calc == undefined) setTimeout(enableStrictIntersection, 10);
-    
     let oldConf = Calc.controller.getMathquillConfig;
-    
+
     Calc.controller.getMathquillConfig = (e) => {
         let conf = oldConf.call(Calc.controller, e);
         conf.autoOperatorNames += " strictintersection";
         return conf;
     }
+
+    console.log("strict intersection loaded");
 }
 
-enableStrictIntersection();
+setTimeout(enableStrictIntersection, 10000);
